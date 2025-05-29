@@ -1,6 +1,6 @@
 ﻿namespace Sitta.Core.Rules
 {
-    internal interface IRuleset
+    public interface IRuleset
     {
         public IEnumerable<IRule> Rules { get; }
 
@@ -8,13 +8,21 @@
         public void RemoveRule(IRule rule);
     }
 
-    internal interface IRule
+    public interface IRule
     {
+        public delegate Action Perform();
+
         public bool Applicable { get; }
     }
 
-    internal interface IGameplay : IRuleset
+    public interface IGameplay : IRuleset
     {
+        public ISetup Setup { get; }
+
         public IFlow Flow { get; }
     }
+
+    public interface ISetup : IRuleset { }
+
+    public interface IState { }
 }
