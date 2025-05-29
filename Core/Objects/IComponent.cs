@@ -5,7 +5,8 @@ namespace Sitta.Core.Objects
     public interface IComponent
     {
         public string Name { get; }
-        public IRuleset Ruleset { get; }
+
+        public IPropertyContainer Properties { get; }
 
         public IEnumerable<IComponent> Belongings { get; }
     }
