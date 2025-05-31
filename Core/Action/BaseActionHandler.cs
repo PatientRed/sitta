@@ -1,4 +1,5 @@
 ﻿using Sitta.Core.Objects;
+using Sitta.Core.Rules;
 
 namespace Sitta.Core.Action
 {
@@ -6,13 +7,14 @@ namespace Sitta.Core.Action
     {
         protected readonly IBox _game;
 
+        //TODO: why no polymorphism?
         public void HandleModifyTargetAction(IAction action)
         {
-            var target = _game.GetCurrentTarget();
-            var actionProps = action.Properties;
-            var gameRules = _game.GetRules(action.Type);
-            var combinedProperties = actionProps.Apply(gameRules);
-            var stateChange = combinedProperties.ProduceStateChange();
+            IComponent target = _game.GetCurrentTarget();
+            IPropertyContainer actionProps = action.Properties;
+            IPropertyContainer gameRules = _game.GetRules(action.Type);
+            IPropertyContainer combinedProperties = actionProps.Apply(gameRules);
+            IStateChange stateChange = combinedProperties.ProduceStateChange();
 
             target.Accept(stateChange);
         }
