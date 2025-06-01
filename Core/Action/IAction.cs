@@ -11,17 +11,7 @@ namespace Sitta.Core.Action
         public void Perform(IActionHandler actionHandler);
     }
 
-    public interface IActionDescription
-    {
-
-    }
-
     public interface IStateChange
-    {
-
-    }
-
-    public interface IComponentDescription
     {
 
     }
