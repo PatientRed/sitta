@@ -1,4 +1,4 @@
-﻿using Sitta.Core.TypeSystem;
+﻿using Sitta.Core.Descriptions;
 
 namespace Sitta.Core.Action
 {
