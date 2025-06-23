@@ -20,7 +20,6 @@ namespace Sitta.Core.Action
     {
         public string Type => "Modify target.";
 
-
         private readonly IPropertyContainer _propertyContainer;
         public IPropertyContainer Properties => _propertyContainer;
 
@@ -34,8 +33,6 @@ namespace Sitta.Core.Action
             _propertyContainer = propertyContainer;
         }
     }
-
-
 
     public enum ActionTypes
     {

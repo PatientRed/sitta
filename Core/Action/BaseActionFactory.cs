@@ -9,7 +9,7 @@ namespace Sitta.Core.Action
             if (actiondescription == null)
                 throw new ArgumentNullException(nameof(actiondescription));
 
-            //TODO: that is very naive and seems not optimal
+            //TODO: this is very naive and seems not optimal
             switch (actiondescription.SystemActionType)
             {
                 case var t when t.IsAssignableFrom(typeof(ModifyTargetAction)):
@@ -17,7 +17,7 @@ namespace Sitta.Core.Action
                 //TODO: or?
                 //return new ModifyTargetAction(this.ProduceProps(actiondescription));
                 default:
-                    throw new ArgumentException(nameof(actiondescription.SystemActionType));
+                    throw new ArgumentException($"{nameof(actiondescription.SystemActionType)} has unsopported value {actiondescription.SystemActionType}.");
             }
         }
     }
