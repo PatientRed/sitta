@@ -1,16 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Sitta.Core.Descriptions;
 
 namespace Sitta.Core
 {
     internal class GameDirector
     {
-        public void InitializeTypes()
-        {
+        private IEnumerable<IDescription> _types;
 
+        private IDataSource GetDataSource()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void InitializeTypes()
+        {
+            IEnumerable<IObjectDescription> objects;
+            (_types, objects) = new GameLoader(GetDataSource()).Load();
+
+            throw new NotImplementedException();
         }
     }
 }
