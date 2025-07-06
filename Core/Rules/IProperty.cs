@@ -2,7 +2,14 @@
 {
     public interface IProperty
     {
-        bool IsValidFor(IState state);
+        public string Name { get; }
+
+        //TODO: Internal type
+        public Type Type { get; }
+        //TODO: Can make it int or smth and have a cache of usertype/int
+        public string UserType { get; }
+
+        public dynamic Value { get; }
     }
 
     public class Property : IProperty
