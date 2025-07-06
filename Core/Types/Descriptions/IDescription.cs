@@ -1,4 +1,4 @@
-﻿namespace Sitta.Core.Descriptions
+﻿namespace Sitta.Core.Types.Descriptions
 {
     public interface IDescription
     {
