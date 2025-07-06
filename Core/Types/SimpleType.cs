@@ -1,6 +1,6 @@
 ﻿namespace Sitta.Core.Types
 {
-    internal enum SimpleTypes : byte
+    public enum SimpleType : byte
     {
         Undefined = 0,
         Integer,

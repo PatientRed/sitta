@@ -16,7 +16,7 @@
     public interface IParamDescription : ITypeDescription
     {
         public string Name { get; }
-        public Type SystemParamType { get; }
+        public SimpleType SystemParamType { get; }
     }
 
     public interface IActionDescription : ITypeDescription
