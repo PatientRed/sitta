@@ -7,7 +7,7 @@
 
     public interface ITypeDescription : IDescription
     {
-        public string Name { get; }
+
     }
 
     //TODO: replace system type fields type with respective enums?
@@ -15,6 +15,7 @@
     //Moreover types can't be switched naturally (switches on type variable are clumsy).
     public interface IParamDescription : ITypeDescription
     {
+        public string Name { get; }
         public Type SystemParamType { get; }
     }
 
